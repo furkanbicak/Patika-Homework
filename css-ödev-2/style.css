@@ -1,0 +1,43 @@
+.content{
+    display: flex; 
+    justify-content: center; 
+    background-color: #EEEEEE; 
+    height:70px;
+}
+
+.inputText{
+    height: 30%;
+}
+
+.row{
+    text-align:center;
+}
+
+ul{
+    list-style-type:none;
+}
+
+.help,
+.search,
+.get{
+  text-align: center;
+}
+
+/* Alt kısım Yeşil Alan */
+* {
+    box-sizing: border-box;
+}
+
+.box {
+float: left;
+width: 33.33%;
+height: 100px;
+border: 1px solid white;
+background-color:#7EE4DA
+}
+
+.clearfix::after {
+content: "";
+clear: both;
+display: table;
+}
