@@ -6,8 +6,7 @@ myName.innerHTML = `${userName}`;
 
 const months = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe","Cuma","Cumartesi"];
 
-
-function showTime(){
+const showTime = () =>{
     let timeDay = document.querySelector("#myClock");
     let d = new Date();
 
