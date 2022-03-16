@@ -1,4 +1,3 @@
-//DOM Etiketlerimizi ayarladık
 let input = document.querySelector(`#task`)             // input alanı.
 let btnAdded = document.querySelector(`#liveToastBtn`)  // ekle butonu.
 let ul = document.querySelector(`#list`)                // ul listesi.
