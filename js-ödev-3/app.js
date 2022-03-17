@@ -81,3 +81,92 @@ const menu = [
     desc: `Red bean paste dessert, serving with honey.`,
   },
 ];
+
+/* Buton ve Menu DOM */
+let menuContainerDOM = document.querySelector(".section-center")
+let buttonDOM = document.querySelector(".btn-container")
+
+/* Buton oluşturma */
+function createButton(btnName) {
+  let btn = `<button class="btn btn-outline-dark btn-item" id="${btnName}">${btnName}</button>` 
+  return btn
+}
+
+/* Butonları Ekleme */
+function addButton(){
+  buttonDOM.innerHTML = 
+    `
+    ${createButton("All")} 
+    ${createButton("Korea")} 
+    ${createButton("Japan")} 
+    ${createButton("China")} 
+    `
+
+    document.querySelector('#All').addEventListener(`click`, allFoods)
+    document.querySelector('#Korea').addEventListener(`click`, koreaFoods)
+    document.querySelector('#Japan').addEventListener(`click`, japanFoods)
+    document.querySelector('#China').addEventListener(`click`, chinaFoods)
+}
+addButton()
+
+//Anasayfa menüleri oluşturma.
+function allFoods(){
+  let allMenu = "" 
+  menu.filter(menu =>{
+    allMenu += createFood(menu)
+  })
+  menuContainerDOM.innerHTML = allMenu
+}
+
+//Korea yemekleri
+function koreaFoods(){
+  let allMenu = "" 
+  menu.map(menu => { 
+    if (menu.category === "Korea"){ 
+      allMenu += createFood(menu)
+    }
+  })
+  menuContainerDOM.innerHTML = allMenu
+}
+//Japan yemekleri
+function japanFoods(){
+  let allMenu = "" 
+  menu.map(menu => { 
+    if (menu.category === "Japan"){
+      allMenu += createFood(menu)
+    }
+  })
+  menuContainerDOM.innerHTML = allMenu
+}
+//China yemekleri
+function chinaFoods(){
+  let allMenu = "" 
+  menu.map(menu => { 
+    if (menu.category === "China"){
+      allMenu += createFood(menu)
+    }
+  })
+  menuContainerDOM.innerHTML = allMenu
+}
+
+
+function createFood (food) {
+  let item = `
+  <div class="menu-items col-lg-6 col-sm-12">
+    <img src="${food.img}" alt="${food.title}" class="photo">
+      <div class="menu-info">
+          <div class="menu-title">
+              <h4>${food.title}</h4>
+              <h4 class="price">${food.price}</h4>
+          </div>
+          <div class="menu-text">
+            ${food.desc}
+          </div>
+      </div>
+
+  </div>
+        `
+        return item
+}
+
+allFoods()
